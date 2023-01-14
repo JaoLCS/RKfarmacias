@@ -1,0 +1,57 @@
+{%extends 'layouts/base.html'%}
+
+{%block title%}Remédio X{%endblock title%}
+
+{%block page-directory%}Atualizar dados do remédio X{%endblock page-directory%}
+
+{%block main-content%}
+<div class="row">
+    <div class= "col-12">
+        <div class="card">
+            <div class= "card-body">
+                <form class="form-horizontal form-material mx-2">
+                    <div class="form-group">
+                        <label class="col-md-12 mb-0">Remédio</label>
+                        <div class="col-md-12">
+                            <input type="text" placeholder="Remédio"
+                                class="form-control ps-0 form-control-line">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12 mb-0">Preço</label>
+                        <div class="col-md-12">
+                            <input type="password" value="Preço"
+                                class="form-control ps-0 form-control-line">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12 mb-0">Quantidade</label>
+                        <div class="col-md-12">
+                            <input type="text" placeholder="12"
+                                class="form-control ps-0 form-control-line">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Embalagem</label>
+                        <div class="col-sm-12 border-bottom">
+                            <select class="form-select shadow-none border-0 ps-0 form-control-line">
+                                <option>Primária</option>
+                                <option>Secundária</option>
+                                <option>Terciária</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12 d-flex">
+                            <button class="btn btn-success mx-auto mx-md-0 text-white">
+                                Atualizar dados
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock main-content%}

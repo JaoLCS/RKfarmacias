@@ -1,0 +1,128 @@
+{%extends 'layouts/base.html'%}
+
+{%block title%}CRUD{%endblock title%}
+
+{%block page-directory%}CRUD{%endblock page-directory%}
+
+{%block main-content%}
+<!-- Create Form -->
+<div class="row">
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <form class="form-horizontal form-material mx-2">
+                    <div class="form-group">
+                        <label class="col-md-12 mb-0">Remédio</label>
+                        <div class="col-md-12">
+                            <input type="text" placeholder="Remédio"
+                                class="form-control ps-0 form-control-line">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12 mb-0">Preço</label>
+                        <div class="col-md-12">
+                            <input type="password" value="Preço"
+                                class="form-control ps-0 form-control-line">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12 mb-0">Quantidade</label>
+                        <div class="col-md-12">
+                            <input type="text" placeholder="12"
+                                class="form-control ps-0 form-control-line">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Embalagem</label>
+                        <div class="col-sm-12 border-bottom">
+                            <select class="form-select shadow-none border-0 ps-0 form-control-line">
+                                <option>Primária</option>
+                                <option>Secundária</option>
+                                <option>Terciária</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12 d-flex">
+                            <button class="btn btn-success mx-auto mx-md-0 text-white">
+                                Cadastrar Remédio
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class= "col-8">
+        <div class="card">
+            <div class= "card-body">
+                <h4 class="card-title">Lista de Remédios</h4>
+                <div class="table-responsive mt-5">
+                    <table class="table stylish-table no-wrap">
+                        <thead>
+                            <tr>
+                                <th class="border-top-0">#</th>
+                                <th class="border-top-0">Remédio</th>
+                                <th class="border-top-0">Preço</th>
+                                <th class="border-top-0">Quantidade</th>
+                                <th class="border-top-0">Embalagem</th>
+                                <th class="border-top-0">Opções</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Deshmukh</td>
+                                <td>Prohaska</td>
+                                <td>@Genelia</td>
+                                <td>@Genelia</td>
+                                <td>
+                                    <button class="btn btn-primary mx-auto mx-md-0 text-white">
+                                        Editar
+                                    </button>
+                                    <button class="btn btn-danger mx-auto mx-md-0 text-white">
+                                        Deletar
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Deshmukh</td>
+                                <td>Gaylord</td>
+                                <td>@Ritesh</td>
+                                <td>@Ritesh</td>
+                                <td>
+                                    <button class="btn btn-primary mx-auto mx-md-0 text-white">
+                                        Editar
+                                    </button>
+                                    <button class="btn btn-danger mx-auto mx-md-0 text-white">
+                                        Deletar
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Sanghani</td>
+                                <td>Gusikowski</td>
+                                <td>@Govinda</td>
+                                <td>@Govinda</td>
+                                <td>
+                                    <button class="btn btn-primary mx-auto mx-md-0 text-white">
+                                        Editar
+                                    </button>
+                                    <button class="btn btn-danger mx-auto mx-md-0 text-white">
+                                        Deletar
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock main-content%}
+

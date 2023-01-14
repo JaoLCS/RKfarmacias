@@ -1,0 +1,78 @@
+{%extends 'layouts/base.html'%}
+
+{%block title%}Listagem Geral{%endblock title%}
+
+{%block page-directory%}Listagem Geral{%endblock page-directory%}
+
+{%block main-content%}
+<div class="row">
+    <div class= "col-12">
+        <div class="card">
+            <div class= "card-body">
+                <h4 class="card-title">Lista de Remédios</h4>
+                <div class="table-responsive mt-5">
+                    <table class="table stylish-table no-wrap">
+                        <thead>
+                            <tr>
+                                <th class="border-top-0">#</th>
+                                <th class="border-top-0">Remédio</th>
+                                <th class="border-top-0">Preço</th>
+                                <th class="border-top-0">Quantidade</th>
+                                <th class="border-top-0">Embalagem</th>
+                                <th class="border-top-0">Opções</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Deshmukh</td>
+                                <td>Prohaska</td>
+                                <td>@Genelia</td>
+                                <td>@Genelia</td>
+                                <td>
+                                    <button class="btn btn-primary mx-auto mx-md-0 text-white">
+                                        Editar
+                                    </button>
+                                    <button class="btn btn-danger mx-auto mx-md-0 text-white">
+                                        Deletar
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Deshmukh</td>
+                                <td>Gaylord</td>
+                                <td>@Ritesh</td>
+                                <td>@Ritesh</td>
+                                <td>
+                                    <button class="btn btn-primary mx-auto mx-md-0 text-white">
+                                        Editar
+                                    </button>
+                                    <button class="btn btn-danger mx-auto mx-md-0 text-white">
+                                        Deletar
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Sanghani</td>
+                                <td>Gusikowski</td>
+                                <td>@Govinda</td>
+                                <td>@Govinda</td>
+                                <td>
+                                    <button class="btn btn-primary mx-auto mx-md-0 text-white">
+                                        Editar
+                                    </button>
+                                    <button class="btn btn-danger mx-auto mx-md-0 text-white">
+                                        Deletar
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock main-content%}
