@@ -11,40 +11,38 @@
         <div class="card">
             <div class="card-body">
                 <form class="form-horizontal form-material mx-2">
+                    {% csrf_token %}
                     <div class="form-group">
                         <label class="col-md-12 mb-0">Remédio</label>
                         <div class="col-md-12">
-                            <input type="text" placeholder="Remédio"
-                                class="form-control ps-0 form-control-line">
+                            {{form.rem_remedio}}
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12 mb-0">Preço</label>
                         <div class="col-md-12">
-                            <input type="password" value="Preço"
-                                class="form-control ps-0 form-control-line">
+                           {{form.rem_preco}}
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12 mb-0">Quantidade</label>
                         <div class="col-md-12">
-                            <input type="text" placeholder="12"
-                                class="form-control ps-0 form-control-line">
+                            {{form.rem_quantidade}}
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-12">Embalagem</label>
                         <div class="col-sm-12 border-bottom">
                             <select class="form-select shadow-none border-0 ps-0 form-control-line">
-                                <option>Primária</option>
-                                <option>Secundária</option>
-                                <option>Terciária</option>
+                                {%for campo in form.rem_embalagem%}
+                                <option>{{campo}}</option>
+                                {%endfor%}                      
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-12 d-flex">
-                            <button class="btn btn-success mx-auto mx-md-0 text-white">
+                            <button class="btn btn-success mx-auto mx-md-0 text-white" type="submit">
                                 Cadastrar Remédio
                             </button>
                         </div>
@@ -72,51 +70,23 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {%for i in chave%}
                             <tr>
-                                <td>1</td>
-                                <td>Deshmukh</td>
-                                <td>Prohaska</td>
-                                <td>@Genelia</td>
-                                <td>@Genelia</td>
+                                <td>{{i.id}}</td>
+                                <td>{{i.rem_remedio}} </td>
+                                <td>{{i.rem_preco}} </td>
+                                <td>{{i.rem_quantidade}} </td>
+                                <td>{{i.rem_embalagem}} </td>
                                 <td>
                                     <button class="btn btn-primary mx-auto mx-md-0 text-white">
                                         Editar
                                     </button>
-                                    <button class="btn btn-danger mx-auto mx-md-0 text-white">
+                                    <button class="btn btn-danger mx-auto mx-md-0 text-white" type="submit">
                                         Deletar
                                     </button>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Deshmukh</td>
-                                <td>Gaylord</td>
-                                <td>@Ritesh</td>
-                                <td>@Ritesh</td>
-                                <td>
-                                    <button class="btn btn-primary mx-auto mx-md-0 text-white">
-                                        Editar
-                                    </button>
-                                    <button class="btn btn-danger mx-auto mx-md-0 text-white">
-                                        Deletar
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Sanghani</td>
-                                <td>Gusikowski</td>
-                                <td>@Govinda</td>
-                                <td>@Govinda</td>
-                                <td>
-                                    <button class="btn btn-primary mx-auto mx-md-0 text-white">
-                                        Editar
-                                    </button>
-                                    <button class="btn btn-danger mx-auto mx-md-0 text-white">
-                                        Deletar
-                                    </button>
-                                </td>
-                            </tr>
+                            {%endfor%}
                         </tbody>
                     </table>
                 </div>
