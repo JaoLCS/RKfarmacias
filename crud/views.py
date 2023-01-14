@@ -29,6 +29,11 @@ def read(request):
 def search(request):
     return render(request, 'search.html')
 
+def query(request):
+    query = request.GET.get('query')
+    resultados = remedios.objects.filter(rem_remedio__icontains = query)
+    return render(request,'search-results.html', {"resultados": resultados})
+
 def update(request, id_remedio):
     remedio = remedios.objects.get(pk = id_remedio)
     form = remediosForm(request.POST or None, instance = remedio)

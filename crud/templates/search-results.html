@@ -1,15 +1,16 @@
 {%extends 'layouts/base.html'%}
 
-{%block title%}Listagem Geral{%endblock title%}
+{%block title%}Resultados da Pesquisa{%endblock title%}
 
-{%block page-directory%}Listagem Geral{%endblock page-directory%}
+{%block page-directory%}Resultados da Pesquisa{%endblock page-directory%}
 
 {%block main-content%}
 <div class="row">
     <div class= "col-12">
         <div class="card">
             <div class= "card-body">
-                    <h4 class="card-title">Lista de Remédios</h4>
+                    <h4 class="card-title">Resultados Encontrados</h4>
+                    {%if resultados%}
                     <div class="table-responsive mt-5">
                         <table class="table stylish-table no-wrap">
                             <thead>
@@ -22,7 +23,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {%for i in chave%}
+                                {%for i in resultados%}
                                     <tr>
                                         <td>{{i.id}}</td>
                                         <td>{{i.rem_remedio}} </td>
@@ -34,6 +35,9 @@
                             </tbody>
                         </table>
                     </div>
+                    {%else%}
+                        <h6 class="card-subtitle">Sem resultados</h6>
+                    {%endif%}
                 </div>
             </div>
         </div>

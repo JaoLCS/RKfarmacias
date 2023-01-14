@@ -23,7 +23,8 @@ urlpatterns = [
     path('crud/', crud, name="crud"),
     path('read/', read, name="read"),
     path('search/', search, name="search"),
-    path('update/<int:id_remedio', update, name="update"),
-    path('delete/<int: id_remedio>', update, name="update"),
+    path('query/', query, name="query"),
+    path('update/<int:id_remedio>', update, name="update_remedio"),
+    path('delete/<int:id_remedio>', delete, name="delete_remedio"),
 
 ]

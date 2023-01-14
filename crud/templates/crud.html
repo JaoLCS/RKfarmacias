@@ -10,7 +10,7 @@
     <div class="col-4">
         <div class="card">
             <div class="card-body">
-                <form class="form-horizontal form-material mx-2">
+                <form class="form-horizontal form-material mx-2" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
                         <label class="col-md-12 mb-0">Remédio</label>
@@ -33,11 +33,7 @@
                     <div class="form-group">
                         <label class="col-sm-12">Embalagem</label>
                         <div class="col-sm-12 border-bottom">
-                            <select class="form-select shadow-none border-0 ps-0 form-control-line">
-                                {%for campo in form.rem_embalagem%}
-                                <option>{{campo}}</option>
-                                {%endfor%}                      
-                            </select>
+                            {{form.rem_embalagem}}
                         </div>
                     </div>
                     <div class="form-group">
@@ -71,21 +67,21 @@
                         </thead>
                         <tbody>
                             {%for i in chave%}
-                            <tr>
-                                <td>{{i.id}}</td>
-                                <td>{{i.rem_remedio}} </td>
-                                <td>{{i.rem_preco}} </td>
-                                <td>{{i.rem_quantidade}} </td>
-                                <td>{{i.rem_embalagem}} </td>
-                                <td>
-                                    <button class="btn btn-primary mx-auto mx-md-0 text-white">
-                                        Editar
-                                    </button>
-                                    <button class="btn btn-danger mx-auto mx-md-0 text-white" type="submit">
-                                        Deletar
-                                    </button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>{{i.id}}</td>
+                                    <td>{{i.rem_remedio}} </td>
+                                    <td>{{i.rem_preco}} </td>
+                                    <td>{{i.rem_quantidade}} </td>
+                                    <td>{{i.rem_embalagem}} </td>
+                                    <td>
+                                        <button class="btn btn-primary mx-auto mx-md-0 text-white">
+                                            <a href="{%url 'update_remedio' i.id%}" style="color:white">Atualizar</a>
+                                        </button>
+                                        <button class="btn btn-danger mx-auto mx-md-0 text-white">
+                                            <a href="{%url 'delete_remedio' i.id%}" style="color:white">Excluir</a>
+                                        </button>
+                                    </td>
+                                </tr>
                             {%endfor%}
                         </tbody>
                     </table>

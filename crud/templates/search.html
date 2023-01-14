@@ -10,8 +10,8 @@
         <div class="card">
             <div class="card-body align-items-center">
                 Pesquisar remédio:
-                <form class="app-search ps-3">
-                    <input type="text" class="form-control" placeholder="Search for..."> 
+                <form class="app-search ps-3" action= "{%url 'query'%}" method= "GET">
+                    <input type="text" name="query" class="form-control" > 
                     <a class="srh-btn">
                         <i class="ti-search"></i>
                     </a>

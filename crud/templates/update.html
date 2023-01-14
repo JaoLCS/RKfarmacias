@@ -9,46 +9,40 @@
     <div class= "col-12">
         <div class="card">
             <div class= "card-body">
-                <form class="form-horizontal form-material mx-2">
-                    <div class="form-group">
-                        <label class="col-md-12 mb-0">Remédio</label>
-                        <div class="col-md-12">
-                            <input type="text" placeholder="Remédio"
-                                class="form-control ps-0 form-control-line">
+                    <form class="form-horizontal form-material mx-2" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label class="col-md-12 mb-0">Remédio</label>
+                            <div class="col-md-12">
+                                {{form.rem_remedio}}
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-12 mb-0">Preço</label>
-                        <div class="col-md-12">
-                            <input type="password" value="Preço"
-                                class="form-control ps-0 form-control-line">
+                        <div class="form-group">
+                            <label class="col-md-12 mb-0">Preço</label>
+                            <div class="col-md-12">
+                               {{form.rem_preco}}
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-12 mb-0">Quantidade</label>
-                        <div class="col-md-12">
-                            <input type="text" placeholder="12"
-                                class="form-control ps-0 form-control-line">
+                        <div class="form-group">
+                            <label class="col-md-12 mb-0">Quantidade</label>
+                            <div class="col-md-12">
+                                {{form.rem_quantidade}}
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-12">Embalagem</label>
-                        <div class="col-sm-12 border-bottom">
-                            <select class="form-select shadow-none border-0 ps-0 form-control-line">
-                                <option>Primária</option>
-                                <option>Secundária</option>
-                                <option>Terciária</option>
-                            </select>
+                        <div class="form-group">
+                            <label class="col-sm-12">Embalagem</label>
+                            <div class="col-sm-12 border-bottom">
+                                {{form.rem_embalagem}}
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-12 d-flex">
-                            <button class="btn btn-success mx-auto mx-md-0 text-white">
-                                Atualizar dados
-                            </button>
+                        <div class="form-group">
+                            <div class="col-sm-12 d-flex">
+                                <button class="btn btn-success mx-auto mx-md-0 text-white" type="submit">
+                                    Cadastrar Remédio
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
                 </div>
             </div>
         </div>
