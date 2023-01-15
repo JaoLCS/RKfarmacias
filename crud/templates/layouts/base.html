@@ -93,12 +93,14 @@
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
+                        {%if user.is_authenticated%}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic me-2">Markarn Doe
+                                {{request.user.username}}
                             </a>
                             <ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul>
                         </li>
+                        {%endif%}
                     </ul>
                 </div>
             </nav>
@@ -115,7 +117,8 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-        
+                        {%if user.is_authenticated %}
+                        {%if user.is_superuser%}
                         <li class="sidebar-item"> 
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{%url 'crud'%}" aria-expanded="false">
                                 <i class="me-3  fas fa-database" aria-hidden="true"></i>
@@ -124,7 +127,8 @@
                                 </span>
                             </a>
                         </li>
-
+                        {%endif%}
+                        {%endif%}
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{%url 'read'%}" aria-expanded="false">
                                 <i class="me-3  fas fa-list-ul" aria-hidden="true"></i>
@@ -151,8 +155,28 @@
                                 </span>
                             </a>
                         </li>
+                        
+                        {% if user.is_authenticated %}
+                        <li class="sidebar-item"> 
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{%url 'logout'%}" aria-expanded="false">
+                                <i class="me-3 fa fa-info-circle" aria-hidden="true"></i>
+                                <span class="hide-menu">
+                                    Logout
+                                </span>
+                            </a>
+                        </li>
                     </ul>
-
+                    {% else %}
+                    <li class="sidebar-item"> 
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{%url 'login'%}" aria-expanded="false">
+                            <i class="me-3 fa fa-info-circle" aria-hidden="true"></i>
+                            <span class="hide-menu">
+                                Login
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                {% endif %}
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
