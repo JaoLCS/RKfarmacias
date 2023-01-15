@@ -74,23 +74,23 @@ WSGI_APPLICATION = 'RKfarmacias.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
- 'default': {
- 'ENGINE': 'django.db.backends.mysql',
- 'NAME': 'db_20191104010013',
- 'USER': 'user_20191104010013',
- 'PASSWORD': '12345',
- 'HOST': 'localhost',
- 'PORT': '3306',
- }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# DATABASES = {
+#  'default': {
+#  'ENGINE': 'django.db.backends.mysql',
+#  'NAME': 'db_20191104010013',
+#  'USER': 'user_20191104010013',
+#  'PASSWORD': '12345',
+#  'HOST': 'localhost',
+#  'PORT': '3306',
+#  }
+# }
 
 
 # Password validation
