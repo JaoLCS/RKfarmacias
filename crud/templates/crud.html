@@ -6,6 +6,9 @@
 
 {%block main-content%}
 <!-- Create Form -->
+
+{%if user.is_authenticated%}
+
 <div class="row">
     <div class="col-4">
         <div class="card">
@@ -90,5 +93,9 @@
         </div>
     </div>
 </div>
+
+{% else %}
+    <p> Para visualizar esta página, o usuário deve estar logado. </p>
+{% endif %}
 {%endblock main-content%}
 

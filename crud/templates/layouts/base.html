@@ -118,7 +118,7 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         {%if user.is_authenticated %}
-                        {%if user.is_superuser%}
+
                         <li class="sidebar-item"> 
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{%url 'crud'%}" aria-expanded="false">
                                 <i class="me-3  fas fa-database" aria-hidden="true"></i>
@@ -127,7 +127,7 @@
                                 </span>
                             </a>
                         </li>
-                        {%endif%}
+
                         {%endif%}
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{%url 'read'%}" aria-expanded="false">
